@@ -23,7 +23,7 @@ public class ThreadWrapper {
     }
 
     public static void main(String[] args) {
-        ThreadWrapper wrapper = new ThreadWrapper("John Doe");
+        ThreadWrapper wrapper = new ThreadWrapper("John Doe Jane Mick");
         wrapper.run();
     }
 }

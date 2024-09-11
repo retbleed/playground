@@ -7,7 +7,6 @@ import java.util.List;
 public class ThreadMaker extends Thread {
     private final long minTime;
     private final List<Character> availableLetters;
-    private static final List<Character> usedLetters = Collections.synchronizedList(new ArrayList<>());
 
     public ThreadMaker(long minTime, String name) {
         this.minTime = minTime;
@@ -23,7 +22,6 @@ public class ThreadMaker extends Thread {
                 Collections.shuffle(availableLetters);
                 char selectedChar = availableLetters.removeFirst();
                 System.out.print(selectedChar + " ");
-                usedLetters.add(selectedChar);
                 Thread.sleep(minTime);
             } catch (InterruptedException e) {
                 e.printStackTrace();
